@@ -1,0 +1,141 @@
+/* Universal Reset and Poster Structure */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(circle at center, #0a0e2a, #050711);
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* A bold sans-serif is a good stand-in */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.poster-container {
+    width: 400px; /* Emulating a 4:5 vertical poster aspect ratio */
+    height: 500px;
+    background-color: #03040c;
+    border: 4px solid #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+/* Background Overlay Effect (simulating the circuit pattern) */
+.poster-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+/* Header (Band Name & Tour) */
+.poster-header {
+    text-align: center;
+    z-index: 10;
+}
+
+.band-name {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 0.9;
+    /* Simulate a 'distressed' experimental font with text-shadow */
+    text-shadow: -2px -2px 0 #333, 2px 2px 0 #111;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff007f; /* Neon Pink */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* Main Body (Graphic and Callout) */
+.poster-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+}
+
+/* A stylized placeholder where the 'hand key' graphic would be */
+.key-graphic-placeholder {
+    width: 150px;
+    height: 150px;
+    margin: 1.5rem 0;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg at 50% 50%, #0a0e2a, #ff007f, #0a0e2a);
+    box-shadow: 0 0 40px rgba(255, 0, 127, 0.5);
+    /* In a real project, this is replaced with the central image */
+}
+
+.callout {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ccff00; /* Neon Yellow-Green */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+/* Footer (Event Details & CTA) */
+.poster-footer {
+    text-align: center;
+    z-index: 10;
+}
+
+.event-details {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+/* Specific Accent Colors */
+.pink { color: #ff007f; }
+.yellow { color: #ccff00; }
+
+.cta-button {
+    background-color: #ff007f; /* Neon Pink */
+    color: white;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 0, 127, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e60072;
+}
+
+.sponsors {
+    font-size: 0.6rem;
+    color: #666;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+}
+
+
